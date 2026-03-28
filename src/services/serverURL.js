@@ -1,1 +1,1 @@
-export const serverURL="https://movie-mate-backend-ye39.onrender.com/"
+export const serverURL="https://movie-mate-backend-ye39.onrender.com"
