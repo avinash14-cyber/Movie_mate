@@ -1,16 +1,37 @@
-# React + Vite
+# MovieMate 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MovieMate is a full-stack web application to track movies and series.
+Users can add, update status, rate, and manage their watchlist.
 
-Currently, two official plugins are available:
+##  Live Links
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Frontend: https://movie-mate1.netlify.app/ 
+Backend: https://movie-mate-backend-ye39.onrender.com/media
 
-## React Compiler
+##  Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Add movies and series
+- Update status (Watching, Completed, Wishlist)
+- Rate and review media
+- Filter by genre
+- Responsive UI
 
-## Expanding the ESLint configuration
+##  Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Frontend: React, Bootstrap, Axios  
+Backend: FastAPI  
+Database: SQLite  
+Deployment: Netlify & Render
+
+## ⚙️ Setup Instructions
+
+### Frontend
+git clone <repo>
+cd moviemate-frontend
+npm install
+npm run dev
+
+### Backend (optional)
+cd moviemate-backend
+pip install -r requirements.txt
+uvicorn main:app --reload
