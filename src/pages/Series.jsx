@@ -224,7 +224,7 @@ Movies
       </div>
 
       <div className="container  no-scrollbar overflow-y-auto py-4" style={{height:'410px'}}>
-              {filteredSeries.length>0 ? (filteredSeries?.map((series, index) => (
+              {filteredSeries?.length>0 ? (filteredSeries?.map((series, index) => (
                 <div
                   key={index}
                   className="card mb-3 bg-danger text-white shadow"

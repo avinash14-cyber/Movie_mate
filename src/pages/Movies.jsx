@@ -224,7 +224,7 @@ const filteredMovies =
 
     
       <div className="container  no-scrollbar overflow-y-auto py-4" style={{height:'410px'}}>
-        {filteredMovies.length>0 ? (filteredMovies?.map((movie, index) => (
+        {filteredMovies?.length>0 ? (filteredMovies?.map((movie, index) => (
           <div
             key={index}
             className="card mb-3 bg-danger text-white shadow"
