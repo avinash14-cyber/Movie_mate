@@ -26,7 +26,7 @@ Deployment: Netlify & Render
 ## ⚙️ Setup Instructions
 
 ### Frontend
-git clone <repo>
+git clone https://github.com/avinash14-cyber/Movie_mate
 cd moviemate-frontend
 npm install
 npm run dev
