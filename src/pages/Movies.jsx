@@ -117,7 +117,7 @@ setMovieGenre("");
 const getMovies=async()=>{
   try {
     const result =await getAllMoviesAPI(movies?.type)
-    setShowMovie(result.data);
+    setShowMovie(result?.data);
     
   } catch (error) {
     
@@ -178,8 +178,8 @@ if(res.isConfirmed){
 const filteredMovies =
   activeGenre === "All"
     ? showmovie
-    : showmovie.filter(
-        (movie) => movie.genre?.toLowerCase() === activeGenre.toLowerCase()
+    : showmovie?.filter(
+        (movie) => movie.genre?.toLowerCase() === activeGenre?.toLowerCase()
       );
 
 

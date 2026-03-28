@@ -120,7 +120,7 @@ const handleAddSeries = async() => {
 const getSeries=async()=>{
   try {
     const result =await getAllMoviesAPI(series?.type)
-    setShowSeries(result.data);
+    setShowSeries(result?.data);
     
   } catch (error) {
     
@@ -182,8 +182,8 @@ useEffect(()=>{
 const filteredSeries =
   activeGenre === "All"
     ? showseries
-    : showseries.filter(
-        (series) => series.genre?.toLowerCase() === activeGenre.toLowerCase()
+    : showseries?.filter(
+        (series) => series.genre?.toLowerCase() === activeGenre?.toLowerCase()
       );
   return (
     <div className='text-white overflow-hidden'>
