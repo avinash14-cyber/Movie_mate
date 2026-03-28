@@ -15,10 +15,15 @@ import { faClapperboard, faStar } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2'
 import { ToastContainer,toast } from 'react-toastify'
 import { SiClockify } from "react-icons/si";
+import { HiArrowSmLeft } from "react-icons/hi";
+
 
 import { addMovieAPI, deleteMovieAPI, getAllMoviesAPI, updateRatingAPI, updateStatusAPI } from '../services/allAPI'
+import { useNavigate } from 'react-router-dom'
 const Series = () => {
 
+
+  const navigate=useNavigate()
 
     const[showseries,setShowSeries]=useState([])
     const [series, setSeries] = useState({
@@ -181,7 +186,7 @@ const filteredSeries =
         (series) => series.genre?.toLowerCase() === activeGenre.toLowerCase()
       );
   return (
-    <div className='text-white'>
+    <div className='text-white overflow-hidden'>
 
         <div
         style={{
@@ -191,8 +196,13 @@ const filteredSeries =
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="d-flex justify-content-center align-items-center"
+        className="d-flex flex-column justify-content-center align-items-center"
       >
+        <div className='w-100 d-flex justify-content-end p-2'>
+                 <button onClick={()=>navigate('/movies')} className='btn rounded-3 bg-white text-dark'><HiArrowSmLeft />
+Movies
+        </button>
+               </div>
        <div className='d-flex align-items-center flex-column'>
          <h1 className="fw-bold" style={{fontSize:'7rem'}}>SERIES</h1>
          <button  data-bs-toggle="modal" data-bs-target="#staticBackdrop" className="btn w-50 btn-danger fw-semibold fs-4 btn-sm">Add series</button>
@@ -222,13 +232,13 @@ const filteredSeries =
                   <div className="row g-0">
                     
                     {/* Poster */}
-                    <div className="col-md-3">
+                    <div className="col-md-3 col-12">
                       <img
                         src={series?.poster_url}
-                        className="img-fluid  rounded-start"
-                        alt="poster"
+                        className="img-fluid w-100 rounded-start"
+                        alt="no poster added"
                          style={{
-            width: "280px",
+            
             height: "400px",
             objectFit: "cover"
           }}
@@ -236,7 +246,7 @@ const filteredSeries =
                     </div>
       
                     {/* Details */}
-                    <div className="col-md-7">
+                    <div className="col-md-7 col-12">
                       <div className="card-body">
                         <p className="card-title " style={{fontSize:'4rem'}}>{series?.title}</p>
                         

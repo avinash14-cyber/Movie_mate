@@ -14,7 +14,12 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2'
 import { addMovieAPI, deleteMovieAPI, getAllMoviesAPI, updateRatingAPI, updateStatusAPI } from '../services/allAPI'
 import { ToastContainer,toast } from 'react-toastify'
+import { HiArrowSmRight } from "react-icons/hi";
+import { useNavigate } from 'react-router-dom'
+
 const Movies = () => {
+
+  const navigate=useNavigate()
     
   const [activeGenre, setActiveGenre] = useState("Popular");
 
@@ -177,10 +182,11 @@ const filteredMovies =
         (movie) => movie.genre?.toLowerCase() === activeGenre.toLowerCase()
       );
 
-  return (
-   <div className=" text-white">
 
-      {/* 🔴 Banner */}
+  return (
+   <div className=" text-white overflow-hidden">
+
+    
       <div
         style={{
           height: "250px",
@@ -189,15 +195,19 @@ const filteredMovies =
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="d-flex justify-content-center align-items-center"
+        className="d-flex flex-column justify-content-center align-items-center"
       >
+       <div className='w-100 d-flex justify-content-end p-2'>
+         <button onClick={()=>navigate('/series')} className='btn rounded-3 bg-white text-dark'>Series <HiArrowSmRight />
+</button>
+       </div>
        <div className='d-flex align-items-center flex-column'>
          <h1 className="fw-bold" style={{fontSize:'7rem'}}>MOVIES</h1>
          <button  data-bs-toggle="modal" data-bs-target="#staticBackdrop" className="btn w-50 btn-danger fw-semibold fs-4 btn-sm">Add movies</button>
          </div>
       </div>
 
-      {/* 🔴 Genre Pills */}
+      
       <div className="bg-danger p-3 d-flex justify-content-center gap-3 flex-wrap">
         {genres?.map((genre) => (
           <button
@@ -212,7 +222,7 @@ const filteredMovies =
         ))}
       </div>
 
-      {/* 🔴 Movie Content */}
+    
       <div className="container  no-scrollbar overflow-y-auto py-4" style={{height:'410px'}}>
         {filteredMovies.length>0 ? (filteredMovies?.map((movie, index) => (
           <div
@@ -222,13 +232,13 @@ const filteredMovies =
             <div className="row g-0">
               
               {/* Poster */}
-              <div className="col-md-3">
+              <div className="col-md-3 col-12">
                 <img
                   src={movie?.poster_url}
-                  className="img-fluid  rounded-start"
+                  className="img-fluid w-100 rounded-start"
                   alt="poster"
                    style={{
-      width: "280px",
+      // width: "280px",
       height: "370px",
       objectFit: "cover"
     }}
@@ -236,7 +246,7 @@ const filteredMovies =
               </div>
 
               {/* Details */}
-              <div className="col-md-7">
+              <div className="col-md-7  col-12">
                 <div className="card-body">
                   <p className="card-title " style={{fontSize:'4rem'}}>{movie?.title}</p>
                   
